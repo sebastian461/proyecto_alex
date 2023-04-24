@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuario', function (Blueprint $table) {
-            $table->bigIncrements('idUsuario')->primary();
+            $table->id('idUsuario');
             $table->char('cedulaPersonal', 10);
-            $table->bigIncrements('idRol');
+            $table->unsignedBigInteger('idRol');
             $table->string('nombreUsuario', 20)->unique();
             $table->string('contraseñaUsuario', 50);
-            $table->bool('estadoUsuario');
+            $table->boolean('estadoUsuario');
             $table->timestamps();
 
             $table->foreign('cedulaPersonal')->references('cedulaPersonal')->on('personal');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('usuario');
     }
 };

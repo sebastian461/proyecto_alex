@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rol', function (Blueprint $table) {
-            $table->bigIncrements('idRol')->primary();
+            $table->id('idRol');
             $table->string('nombreRol', 20)->unique();
             $table->string('descripcionRol', 250)->nullable();
             $table->timestamps();
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rols');
+        Schema::dropIfExists('rol');
     }
 };
