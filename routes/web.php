@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* SIGN-IN */
+
 Route::get('/', function () {
-    return view('aplicacion.index');
+    return view('aplicacion.sign-in.index');
 })->name('sign-in');
 
 Route::get('/sistema',function(){
-    return view('aplicacion.navegacion');
-})->name('navegacion');
+    return view('aplicacion.rol.index');
+})->name('rol');
