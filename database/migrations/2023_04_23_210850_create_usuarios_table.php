@@ -16,7 +16,7 @@ return new class extends Migration
             $table->char('cedulaPersonal', 10);
             $table->unsignedBigInteger('idRol');
             $table->string('nombreUsuario', 20)->unique();
-            $table->string('contraseñaUsuario', 50);
+            $table->string('contraseñaUsuario', 255);
             $table->boolean('estadoUsuario');
             $table->timestamps();
 
