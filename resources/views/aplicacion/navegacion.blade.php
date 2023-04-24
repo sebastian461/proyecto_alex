@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ asset('recursos/bootstrap-5.3.0-alpha2-dist/css/bootstrap.min.css') }}">
     <script src="{{ asset('recursos/bootstrap-5.3.0-alpha2-dist/js/bootstrap.bundle.min.js') }}"></script>
 
+    @yield('estilos')
+
 </head>
 <body>
     <header>

@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('aplicacion.sign-in.index');
 })->name('sign-in');
 
+/* ROLES */
+
 Route::get('/sistema',function(){
     return view('aplicacion.rol.index');
 })->name('rol');
