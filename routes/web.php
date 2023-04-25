@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,7 @@ Route::get('/sistema', [RolController::class, 'index'])->name('rol');
 /* PERSONAL */
 
 Route::get('/sistema/personal', [PersonalController::class, 'index'])->name('personal');
+
+/* USUARIO */
+
+Route::get('/sistema/usuario', [UsuarioController::class, 'index'])->name('usuario');
