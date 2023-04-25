@@ -35,6 +35,7 @@ class usuario extends Model
         return $this->belongsTo(Personal::class, 'cedulaPersonal', 'cedulaPersonal');
     }
 
+    //Esta es una función de tipo mutable para la contraseña (se debe poner 'set')
     public function setPasswordAttribute($value)
     {
         $this->attributes['contraseñaUsuario'] = bcrypt($value);

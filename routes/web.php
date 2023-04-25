@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,4 @@ Route::get('/', function () {
 
 /* ROLES */
 
-Route::get('/sistema',function(){
-    return view('aplicacion.rol.index');
-})->name('rol');
+Route::get('/sistema', [RolController::class, 'index'])->name('rol');

@@ -1,9 +1,5 @@
 @extends('aplicacion.navegacion')
 
-@section('estilos')
-<link rel="stylesheet" href="{{ asset('recursos/css/tabla.css') }}">
-@endsection
-
 @section('content')
 
 <div class="m-5">
@@ -20,21 +16,13 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Mark</td>
-                <td>Otto</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Mark</td>
-                <td>Otto</td>
-            </tr>
+            @foreach ($rol as $r)
+                <tr>
+                    <th scope="row">{{ $r -> idRol }}</th>
+                    <td>{{ $r -> nombreRol }}</td>
+                    <td>{{ $r -> descripcionRol }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
