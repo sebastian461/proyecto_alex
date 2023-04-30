@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="m-5">
-    <button class="btn btn-success">Nuevo usuario</button>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-usuario">Nuevo usuario</button>
 </div>
 
 <div class="table-responsive-xxl">
@@ -21,5 +21,7 @@
         </tbody>
     </table>
 </div>
+
+@include('aplicacion.modal.modal')
 
 @endsection
