@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\usuario;
+use App\Models\personal;
 
 class UsuarioController extends Controller
 {
@@ -12,7 +13,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view('aplicacion.usuario.index');
+        $personal = personal::all();
+        return view('aplicacion.usuario.index', ['personal' => $personal]);
     }
 
     /**
