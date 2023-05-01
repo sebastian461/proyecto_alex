@@ -12,7 +12,7 @@ class usuario extends Model
     protected $table = 'usuario';
 
     protected $fillable = ['cedulaPersonal', 
-                            'idRol', 
+                            'idRol',
                             'nombreUsuario', 
                             'contraseñaUsuario', 
                             'estadoUsuario'];
@@ -33,6 +33,15 @@ class usuario extends Model
     public function personal()
     {
         return $this->belongsTo(Personal::class, 'cedulaPersonal', 'cedulaPersonal');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model){
+            $model->contraseñaUsuario = 'contraseña';
+        });
     }
 
     //Esta es una función de tipo mutable para la contraseña (se debe poner 'set')

@@ -7,10 +7,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>                    
+                <form method="POST"> 
+                    @csrf                   
                     <div class="mb-3">
                         <label for="empleado" class="form-label">Empleado</label>
-                        <select id="empleado" class="form-select">
+                        <select id="empleado" class="form-select" name="empleado">
                             <option selected>Opción...</option>
                             @foreach ($personal as $p)
                                 <option value="{{ $p -> cedulaPersonal }}">{{ $p -> cedulaPersonal }} - {{ $p-> nombresPersonal}} {{ $p-> apellidosPersonal}}</option>
@@ -19,11 +20,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="nombre-usuario" class="col-form-label">Nombre de usuario:</label>
-                        <input type="text" class="form-control" id="nombre-usuario">
+                        <input type="text" class="form-control" id="nombre-usuario" name="nombre-usuario">
                     </div>
                     <div class="mb-3">
                         <label for="estado" class="form-label">Estado</label>
-                        <select id="estado" class="form-select">
+                        <select id="estado" class="form-select" name="estado">
                             <option selected>Opción...</option>
                             <option value="1">Activo</option>
                             <option value="0">Inactivo</option>
