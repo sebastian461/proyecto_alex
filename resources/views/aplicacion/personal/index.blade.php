@@ -17,19 +17,20 @@
                 <th scope="col">Correo</th>
                 <th scope="col">Cargo</th>
                 <th scope="col">Descripción</th>
-            </tr>
-            @foreach ($personal as $p)
-                <th scope="row">{{ $p -> cedulaPersonal }}</th>
-                <td>{{ $p -> nombresPersonal }}</td>
-                <td>{{ $p -> apellidosPersonal }}</td>
-                <td>{{ $p -> telefonoPersonal }}</td>
-                <td>{{ $p -> correoPersonal }}</td>
-                <td>{{ $p -> cargoPersonal }}</td>
-                <td>{{ $p -> descripcionCargoPersonal }}</td>
-            @endforeach
+            </tr>            
         </thead>
         <tbody class="table-group-divider">
-
+            @foreach ($personal as $p)
+                <tr>
+                    <th scope="row">{{ $p -> cedulaPersonal }}</th>
+                    <td>{{ $p -> nombresPersonal }}</td>
+                    <td>{{ $p -> apellidosPersonal }}</td>
+                    <td>{{ $p -> telefonoPersonal }}</td>
+                    <td>{{ $p -> correoPersonal }}</td>
+                    <td>{{ $p -> cargoPersonal }}</td>
+                    <td>{{ $p -> descripcionCargoPersonal }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

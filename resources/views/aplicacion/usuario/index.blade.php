@@ -17,7 +17,14 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-
+            @foreach ($usuario as $u)
+                <tr>
+                    <th scope="row">{{ $u -> idUsuario }}</th>
+                    <td>{{ $u -> idRol }}</td>
+                    <td>{{ $u -> nombreUsuario }}</td>
+                    <td>{{ $u -> estadoUsuario }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
