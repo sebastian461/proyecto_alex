@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\usuario;
 use App\Models\personal;
+use App\Models\rol;
+use App\Http\Requests\UsuarioRequest;
 
 class UsuarioController extends Controller
 {
@@ -14,7 +16,9 @@ class UsuarioController extends Controller
     public function index()
     {
         $personal = personal::all();
-        return view('aplicacion.usuario.index', ['personal' => $personal]);
+        $rol = rol::all();
+        $usuario = usuario::all();
+        return view('aplicacion.usuario.index', ['personal' => $personal, 'rol' => $rol, 'usuario' => $usuario]);
     }
 
     /**
@@ -28,9 +32,10 @@ class UsuarioController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
-        //
+        $usuario = usuario::create($request -> validated());
+        return redirect()->route('usuario');
     }
 
     /**

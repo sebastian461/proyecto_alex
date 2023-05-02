@@ -33,3 +33,5 @@ Route::get('/sistema/personal', [PersonalController::class, 'index'])->name('per
 /* USUARIO */
 
 Route::get('/sistema/usuario', [UsuarioController::class, 'index'])->name('usuario');
+
+Route::post('sistema/crear-usuario', [UsuarioController::class, 'store'])->name('crear-usuario');

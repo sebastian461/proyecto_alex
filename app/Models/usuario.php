@@ -40,14 +40,16 @@ class usuario extends Model
         parent::boot();
 
         static::creating(function ($model){
-            $model->contraseñaUsuario = 'contraseña';
+            if(empty($model->attributes['contraseñaUsuario'])) {
+                $model->contraseñaUsuario = 'contraseña';
+            }
         });
     }
 
     //Esta es una función de tipo mutable para la contraseña (se debe poner 'set')
-    public function setPasswordAttribute($value)
+    public function setcontraseñaUsuarioAttribute($value)
     {
-        $this->attributes['contraseñaUsuario'] = bcrypt($value);
+        $this->attributes['contraseñaUsuario'] = bcrypt($value); // Asignación de valor correcta
     }
 
 }
