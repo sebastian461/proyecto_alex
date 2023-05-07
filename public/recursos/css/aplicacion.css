@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-size: 500%;
+}
+
+body{
+    /* padding-bottom: 10rem; */
+    padding-bottom: 0rem;
+    min-height: 100vh;
+}
