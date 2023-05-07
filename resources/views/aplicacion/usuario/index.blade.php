@@ -29,6 +29,6 @@
     </table>
 </div>
 
-@include('aplicacion.modal.modal')
+@include('aplicacion.modal.modalUsuario')
 
 @endsection
