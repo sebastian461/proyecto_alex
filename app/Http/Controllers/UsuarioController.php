@@ -35,7 +35,7 @@ class UsuarioController extends Controller
     public function store(UsuarioRequest $request)
     {
         $usuario = usuario::create($request -> validated());
-        return redirect()->route('usuario');
+        return redirect()->route('usuario')->with('success','¡Usuario creado correctamente!');
     }
 
     /**

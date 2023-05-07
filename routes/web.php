@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\PersonalController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\SignInController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ use App\Http\Controllers\UsuarioController;
 
 /* SIGN-IN */
 
-Route::get('/', function () {
-    return view('aplicacion.sign-in.index');
-})->name('sign-in');
+Route::get('/', [SignInController::class, 'index'])->name('sign-in');
+
+Route::post('/', [SignInController::class, 'signIn'])->name('validar');
 
 /* ROLES */
 

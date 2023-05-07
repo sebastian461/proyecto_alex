@@ -14,10 +14,11 @@
 </head>
 <body class="text-center">
     <main class="form-signin w-100 m-auto">
-        <form action="" class="needs-validation" novalidate="">
+        <form action="{{ route('validar') }}" class="needs-validation" novalidate="" method="POST">
+            @csrf
             <h1 class="h3 mb-3 fw-normal">Ingreso</h1>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" required="">
+                <input type="text" class="form-control" id="nombreUsuario" placeholder="Usuario" required="" name="nombreUsuario">
                 <label for="floatingInput">Usuario</label>
                 <div class="valid-feedback">
                     Luce bien!
@@ -27,7 +28,7 @@
                 </div>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required="">
+                <input type="password" class="form-control" id="contraseñaUsuario" placeholder="Contraseña" required="" name="contraseñaUsuario">
                 <label for="floatingPassword">Contraseña</label>
                 <div class="valid-feedback">
                     Luce bien!
@@ -36,7 +37,7 @@
                     Ingrese una contraseña valida.
                 </div>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
             <p class="mt-5 mb-3 text-body-secondary">&copy; 2023–2023</p>
         </form>
     </main>
